@@ -11,11 +11,11 @@ Feature: Smoke steps
     Then I wait for element with xpath "//*[@id='res']" to be present
     Then element with xpath "//*[@id='res']" should contain text "Cucumber"
 
-  Scenario: Search Engine for https://gibiru.com
+  Scenario: steps for search engine Gibiru
     Given I open url "https://gibiru.com"
     Then I should see page title contains "Gibiru"
     Then element with xpath "//input[@id='q']" should be present
-    Then I type "Monday" into element with xpath "//input[@id='q']"
+    When I type "Monday" into element with xpath "//input[@id='q']"
     Then I click on element with xpath "//button[@type='submit']"
     Then I wait for element with xpath "//div[@id='web-results']" to be present
     Then element with xpath "//div[@id='web-results']" should contain text "Monday"
